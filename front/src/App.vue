@@ -1,15 +1,21 @@
 <template>
-<div>
-  <div class="bg-blue banner">
-    <div class="d-flex justify-content-center align-items-center">
-      <h1 class="mb-0 text-dark fw-bolder fs-1">Encontre a vaga dos seus sonhos</h1>
-      <img src="./assets/searching-jobs.png" alt="" width="600">
+<div class="position-relative">
+  <img class="pattern-bg right" src="./assets/pattern-bg1.png" alt="background pattern">
+  <img class="pattern-bg left" src="./assets/pattern-bg2.png" alt="background pattern">
+  <div class="container">
+    <div class="d-flex">
+      <h1 class="title">Encontre a vaga dos seus sonhos</h1>
+      <div class="circle">
+        <img src="./assets/searching-jobs.png" alt="">
+      </div>
     </div>
   </div>
-  <JobPanelVue color="#f1f1f1"></JobPanelVue>
-  <div class="dinheiro ">
-    <p>Empregos bons</p>
+  <JobPanelVue color="transparent"></JobPanelVue>
+  <div class="money">
     <img src="./assets/money.png" alt="">
+  </div>
+  <div class="rocket">
+    <img src="./assets/rocket.png" alt="">
   </div>
 </div>
 </template>
@@ -25,44 +31,102 @@ export default {
 </script>
 
 <style>
-.bg-blue{
-      border-radius: 0 0 25px 25px;
-      overflow: hidden;
-  background-image: linear-gradient(to right, #1c41e61c, #e47b3e2c, #1ce61c1a);
-  background: #1572ff;
-}
-.banner{
-  height: 450px;
-  position: relative;
-}
-.banner img{
+.title{
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  text-align: start;
+  font-size: 4em !important;
+  font-size: 2.5rem;
+  color: #00183d;
+  margin-top: 50px;
+  width: 528px;
+  margin: 50px auto;
+  letter-spacing: -4px !important;
+} 
+.pattern-bg{
   position: absolute;
-  bottom: -50px;
+  width: 950px;
+  /* opacity: 0.8; */
+}
+.pattern-bg.left{
+  left: -484px;
+  top: -152px;
+  transform: rotate(298deg);
+}
+.pattern-bg.right{
+  top: -100px;
   right: -50px;
+}
+
+.circle{
+  position: relative;
+  top: -18px;
+  right: 169px;
+  background: #00183d;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+.circle img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 #app {
   font-family: Poppins !important;
+  letter-spacing: -0.4px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: #f1f1f1;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 .radius{
     border-radius: 10px;
 }
 
-.dinheiro{
+.money{
   position: absolute;
-  transform: rotatex( 15deg ) rotateY(20deg) rotateZ(-20deg); 
-  top: 20px;
+  top: 100px;
   left: 50px;
+  background: #00183d;
   width: 200px;
   height: 200px;
-  border-radius: 20px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 20px #000000a8;
+  border-radius: 50%;
 }
-.dinheiro img{
+
+.money img{
+  position: relative; 
+  right: -50px;
+  top: -10px;
+  width: 250px;
+}
+
+.rocket{
+  position: absolute;
+  bottom: 50px;
+  right: -20px;
+  background: #00183d;
   width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.rocket img{
+  position: relative; 
+  left: -40px;
+  top: -60px;
+  width: 250px;
+}
+
+.rocket, .circle, .money{
+  z-index: 0;
+}
+
+body{
+  overflow-x: hidden;
 }
 </style>

@@ -1,18 +1,24 @@
 <template>
-    <div class="card-job col-3 p-3">
+    <div class="card-job col-12 col-md-4 col-sm-6 col-lg-3 p-3">
       <div class="content ">
         <div class="front">
-          <img class="mt-3" src="../assets/using-computer.png" width="110" alt="" srcset="">
-          <h4 class=" my-3 text-center">Analista de Suporte</h4>
-          <p class="badge bg-dark py-2 px-3">CLT</p>
-          <div class="mb-3 d-flex justify-content-center align-items-center bg-white rounded col-auto">
+          <div class="img-job">
+            <img :src="job.img" alt="">
+          </div>
+          <h6 class="mt-3 mb-5 text-center fw-regular">{{job.title}}</h6>
+          <p class="badge bg-dark py-2 px-3">{{job.contract}}</p>
+          <div class="location d-flex justify-content-center align-items-center">
             <i class="fa-solid fa-location-dot me-3"></i>
-            <p class="mb-0">SP - Presidente Prudente</p>
+            <p class="mb-0">{{job.location}}</p>
           </div>
         </div>
+        <div class="back  p-4 text-start">
+          <p>{{job.description}}</p>
 
-        <div class="back">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, explicabo velit? Commodi non fugit dolor? Aspernatur voluptatum minima beatae et repudiandae. Maiores enim pariatur velit tenetur cupiditate natus voluptas quidem.</p>
+          <div class="d-flex justify-content-start align-items-center">
+            <i class="fa-solid fa-brazilian-real-sign"></i>
+            <p class="mb-0 ms-2 fw-bold">{{job.salary}}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -22,7 +28,7 @@
 export default {
   name: 'JobCard',
   props: {
-    msg: String
+    job: Object
   }
 }
 </script>
@@ -31,9 +37,9 @@ export default {
   .card-job{
     position: relative;
     cursor: pointer;
-    top: -50px;
     perspective: 900px;
     min-height: 380px;
+    z-index: 1;
   }
   .card-job:hover .content {
     transition: transform 0.4s;
@@ -54,13 +60,37 @@ export default {
     width: 100%;
     background: white;
     border-radius: 15px;
+    box-shadow: 0 51px 37px -37px #00000010;
+
   }
-  .front img{
-    filter: drop-shadow(0 15px 31px #000000a8);
+  .front .img-job{
+    height: 100px;
+    width: 100px;
+    margin: 20px auto;
+    background: #f1f1f1;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .front .img-job img{
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
   }
   .back {
     height: 100%;
     transform: rotateY( 180deg );
     background-color: #ffffff;
+  }
+  .location{
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #f6f6f6;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+  .location p{
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #00183d;
   }
 </style>
