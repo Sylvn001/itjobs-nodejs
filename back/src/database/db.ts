@@ -12,13 +12,9 @@ export class Database {
   }
 
   public static async getDatabase() {
-    if (this.con != null) {
-      return this.con;
-    } else {
-      let client = await this.connect();
-      this.con = await client.db("jobsdb");
-      return this.con;
-    }
+    let client = await this.connect();
+    this.con = await client.db("jobsdb");
+    return this.con;
   }
 
   public static async closeConnection() {

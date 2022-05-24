@@ -22,5 +22,53 @@
     "regime": "CLT",
     "jornada": "8",
     "remuneracao": "4500"
+  },
+  {
+    "logo": "https://media.glassdoor.com/sql/2763/deloitte-squarelogo-1481880537463.png",
+    "cargo": "Desenvolvedor Front End",
+    "cidade": "Presidente Prudente",
+    "estado": "São Paulo",
+    "regime": "CLT",
+    "requisitos": "Estrutura de dados, 2 anos como desenvolvedor",
+    "formacao": "Ciencias da Computacao, Sistemas de informação",
+    "conhecimentos": "HTML, CSS, Ruby on Rails, PostgresSQL, Docker, Kurbenets",
+    "jornada": "8",
+    "remuneracao": "3.850,00"
+  },
+  {
+    "logo": "https://logosmarcas.net/wp-content/uploads/2020/07/Accenture-Logo-650x366.png",
+    "cargo": "Analista de Suporte",
+    "cidade": "Presidente Prudente",
+    "estado": "São Paulo",
+    "regime": "CLT",
+    "requisitos": "Estrutura de dados, 2 anos como desenvolvedor",
+    "formacao": "Ciencias da Computacao, Sistemas de informação",
+    "conhecimentos": "HTML, CSS, Ruby on Rails, PostgresSQL, Docker, Kurbenets",
+    "jornada": "8",
+    "remuneracao": "4.200,00"
+  },
+  {
+    "logo": "https://yt3.ggpht.com/ytc/AKedOLRqs8NBXARXm50WhrzV3vgKf1HfJCkuRW47UVWDyA=s900-c-k-c0x00ffffff-no-rj",
+    "cargo": "Analista de Suporte",
+    "cidade": "Presidente Prudente",
+    "estado": "São Paulo",
+    "requisitos": "Estrutura de dados, 2 anos como desenvolvedor",
+    "formacao": "Ciencias da Computacao, Sistemas de informação",
+    "conhecimentos": "HTML, CSS, Ruby on Rails, PostgresSQL, Docker, Kurbenets",
+    "regime": "CLT",
+    "jornada": "8",
+    "remuneracao": "3.000,00"
+  },
+  {
+    "logo": "https://1.bp.blogspot.com/-CeFm3Y4ycpg/YYFiD9GMi0I/AAAAAAAADkI/LJO9urQAupstByv1O-suvKo5iCvwzb_rgCNcBGAsYHQ/s2048/Meta.png",
+    "cargo": "Analista de Suporte",
+    "cidade": "Presidente Prudente",
+    "estado": "São Paulo",
+    "requisitos": "Estrutura de dados, 2 anos como desenvolvedor",
+    "formacao": "Ciencias da Computacao, Sistemas de informação",
+    "conhecimentos": "HTML, CSS, Ruby on Rails, PostgresSQL, Docker, Kurbenets",
+    "regime": "CLT",
+    "jornada": "8",
+    "remuneracao": "3.000,00"
   }
 ]
