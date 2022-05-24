@@ -2,36 +2,22 @@ import * as mongoDB from "mongodb";
 
 export class Database {
   static db: mongoDB.MongoClient;
-  static con: mongoDB.MongoClient;
+  static con: mongoDB.Document;
 
   public static async connect() {
-    this.db = new mongoDB.MongoClient("mongodb://localhost:27017");
+    this.db = await new mongoDB.MongoClient("mongodb://localhost:27017");
+    this.con = await this.db.connect();
 
-    return this.db;
+    return this.con;
   }
 
   public static async getDatabase() {
-    if (this.con != null) {
-      return this.con;
-    } else {
-      this.con = await this.db.connect();
-      return this.con;
-    }
+    let client = await this.connect();
+    this.con = await client.db("jobsdb");
+    return this.con;
   }
 
-  public static async desconnect() {
+  public static async closeConnection() {
     await this.db.close();
   }
-}
-
-export async function connectToDatabase() {
-  const client: mongoDB.MongoClient = new mongoDB.MongoClient(
-    "mongodb://localhost:27017"
-  );
-
-  await client.connect();
-
-  const db: mongoDB.Db = await client.db("piadasdb");
-
-  return db;
 }

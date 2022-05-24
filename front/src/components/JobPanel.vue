@@ -1,36 +1,37 @@
 <template>
-    <!-- <img src="" alt=""> -->
-    <div class=" p-3 jobs" :style="{'backgroundColor':color}">
-      <div class="container">
+  <!-- <img src="" alt=""> -->
+  <div class="p-3 jobs" :style="{ backgroundColor: color }">
+    <div class="container">
+      <div class="search mb-4">
+        <p class="text-start mb-0">Qual vaga tem mais a sua cara?</p>
+        <input type="search" v-model="search" class="search-box" />
+      </div>
 
-        <div class="search mb-4">
-          <p class="text-start mb-0">Qual vaga tem mais a sua cara?</p>
-          <input type="search" v-model="search" class="search-box">
-        </div>
-
-        <div class="row">
-          <JobCardVue v-for="(job, index) in jobs" :key="index" :job="job"/>
-        </div>
+      <div class="row">
+        <JobCardVue v-for="(job, index) in jobs" :key="index" :job="job" />
       </div>
     </div>
+  </div>
 </template>
 
 <script>
-import JobCardVue from './JobCard.vue'
+import JobCardVue from "./JobCard.vue";
+import axios from "axios";
+
 export default {
-  name: 'JobPanel',
+  name: "JobPanel",
   data() {
     return {
-      search: '',
+      search: "",
       jobs: [
-        {
-          img: 'accenture.png',
-          title: 'Desenvolvedor Front End',
-          contract: 'CLT',
-          location: 'SP - Presidente Prudente',
-          salary: '2.000,00',
-          description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, explicabo velit? Commodi non fugit dolor? Aspernatur voluptatum minima beatae et repudiandae. Maiores enim pariatur velit tenetur cupiditate natus voluptas quidem.'
-        },
+        // {
+        //   img: 'https://media.glassdoor.com/sql/2763/deloitte-squarelogo-1481880537463.png',
+        //   title: 'Desenvolvedor Front End',
+        //   contract: 'CLT',
+        //   location: 'SP - Presidente Prudente',
+        //   salary: '2.000,00',
+        //   description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, explicabo velit? Commodi non fugit dolor? Aspernatur voluptatum minima beatae et repudiandae. Maiores enim pariatur velit tenetur cupiditate natus voluptas quidem.'
+        // },
         // {
         //   img: 'https://logosmarcas.net/wp-content/uploads/2020/07/Accenture-Logo-650x366.png',
         //   title: 'Analista de Suporte',
@@ -54,24 +55,37 @@ export default {
         //   location: 'SP - Presidente Prudente',
         //   description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, explicabo velit? Commodi non fugit dolor? Aspernatur voluptatum minima beatae et repudiandae. Maiores enim pariatur velit tenetur cupiditate natus voluptas quidem.'
         // }
-      ]
-    }
+      ],
+    };
   },
   props: {
     color: String,
-    msg: String
+    msg: String,
   },
-  components:{
-    JobCardVue
-  }
-}
+  components: {
+    JobCardVue,
+  },
+  methods: {
+    async searchJobs(filter = "") {
+      try {
+        let { data } = await axios.get(`http://localhost:3000/jobs/${filter}`);
+        this.jobs = data;
+      } catch (e) {
+        console.log(e);
+      }
+    },
+  },
+  created() {
+    this.searchJobs();
+  },
+};
 </script>
 
 <style scoped>
-.jobs{
+.jobs {
   position: relative;
 }
-.search-box{
+.search-box {
   border: none;
   outline: none;
   background-color: #fff;
