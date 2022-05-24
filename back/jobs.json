@@ -1,0 +1,26 @@
+[
+  {
+    "logo": "https://www.google.com/url?sa=i&url=https%3A%2F%2Flogodownload.org%2Fskol-logo%2F&psig=AOvVaw1fDBvVo4SFqbS_xanrKEan&ust=1653432368990000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCJDZvPrZ9vcCFQAAAAAdAAAAABAD",
+    "cargo": "Desenvolvedor Back-End",
+    "cidade": "Presidente Prudente",
+    "estado": "São Paulo",
+    "requisitos": "Experiencia de 1 ano com javascript e bancos relacionais e não relacionais",
+    "formacao": "Ciencias da Computacao, Sistemas de informação",
+    "conhecimentos": "HTML, CSS, JAVASCRIPT, MONGODB, MYSQL",
+    "regime": "CLT",
+    "jornada": "8",
+    "remuneracao": "3500"
+  },
+  {
+    "logo": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.wikipedia.org%2Fwiki%2FFicheiro%3AIBM_logo.svg&psig=AOvVaw2GY4eTQddRUVLKRBcOCp3t&ust=1653432888614000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCMC3y_Hb9vcCFQAAAAAdAAAAABAD",
+    "cargo": "Desenvolvedor Back-End",
+    "cidade": "Presidente Prudente",
+    "estado": "São Paulo",
+    "requisitos": "Estrutura de dados, 2 anos como desenvolvedor",
+    "formacao": "Ciencias da Computacao, Sistemas de informação",
+    "conhecimentos": "HTML, CSS, Ruby on Rails, PostgresSQL, Docker, Kurbenets",
+    "regime": "CLT",
+    "jornada": "8",
+    "remuneracao": "4500"
+  }
+]
