@@ -3,7 +3,7 @@
       <div class="content ">
         <div class="front">
           <div class="img-job">
-            <img :src="job.img" alt="">
+            <img :src="require(`../assets/${job.img}`)" alt="">
           </div>
           <h6 class="mt-3 mb-5 text-center fw-regular">{{job.title}}</h6>
           <p class="badge bg-dark py-2 px-3">{{job.contract}}</p>
@@ -15,9 +15,9 @@
         <div class="back  p-4 text-start">
           <p>{{job.description}}</p>
 
-          <div class="d-flex justify-content-start align-items-center">
+          <div v-show="job.salary" class="d-flex justify-content-start align-items-center">
             <i class="fa-solid fa-brazilian-real-sign"></i>
-            <p class="mb-0 ms-2 fw-bold">{{job.salary}}</p>
+            <p class="mb-0 ms-2 fw-bold">{{job?.salary}}</p>
           </div>
         </div>
       </div>
