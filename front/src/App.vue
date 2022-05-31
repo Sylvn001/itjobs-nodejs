@@ -76,12 +76,14 @@ export default {
 #app {
   font-family: Poppins !important;
   letter-spacing: -0.4px;
+  font-optical-sizing: initial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   background: #f1f1f1;
   overflow-x: hidden;
+  overflow-y: clip;
   min-height: 100vh;
 }
 .radius{
@@ -91,7 +93,7 @@ export default {
 .money{
   position: absolute;
   top: 100px;
-  left: 50px;
+  left: -50px;
   background: #00183d;
   width: 200px;
   height: 200px;
@@ -107,7 +109,7 @@ export default {
 
 .rocket{
   position: absolute;
-  bottom: 50px;
+  top: 650px;
   right: -20px;
   background: #00183d;
   width: 150px;
@@ -128,5 +130,40 @@ export default {
 
 body{
   overflow-x: hidden;
+}
+
+::selection{
+  background: #00183d;
+  color: white;
+}
+
+img{
+  user-select: none;
+}
+
+@media screen and (max-width: 1280px){
+  .money, .left{
+    opacity: 0;
+  }  
+  .circle{
+    right: auto;
+    left: -50px;
+  }
+  .pattern-bg.right{
+    right: -400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title{
+    font-size: 12vw !important;
+  }
+  .circle{
+    display: none;
+  }
+  .pattern-bg.right{
+    top: -150px;
+    right: -550px;
+  }
 }
 </style>
